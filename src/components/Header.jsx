@@ -9,10 +9,9 @@ export function Header () {
     return (
         <header style ={{display : "flex" , flexDirection :"column" , justifyContent : "center" , alignItems : "center"}}>
             <h1>
-               <img src={logo} style = {{width : "200px"}} alt="dasdada" />
-              {/*  <img src={logo1} style = {{width : "200px"}} alt="dasdada" />
-               <img src={logo4} style = {{width : "200px"}} alt="dasdada" />
-               <img src={logo3} style = {{width : "200px"}} alt="dasdada" /> */}
+               <img src={logo3} style = {{width : "800px"}} alt="dasdada" />
+              {/*
+                */}
         
             </h1>
              {/*  // <img src={AllImages.veganSpan} style = {{width : "100px", }} alt="dasdsa" /> */}

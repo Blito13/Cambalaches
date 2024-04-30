@@ -31,7 +31,7 @@ export function Products ({ products }) {
                             </div>
                             <div style={{marginBottom:"1px"}}>
                                 <button 
-                                style = {{backgroundColor : isProductInCart ? 'rgb(19, 148, 16)' : '#d53b3b' }}
+                                style = {{backgroundColor : isProductInCart ? '#267fde' : 'grey' }}
                                 onClick={()=>{
                                     isProductInCart
                                     ? removeFromCart(product)

@@ -1,5 +1,5 @@
 .cart{
-    background: #ec7c7c;
+    background: rgba(13, 111, 11, 0.665);
     display: none;
     padding: 12px;
     position: fixed;
@@ -7,7 +7,7 @@
     top: 0px;
     width:200px;
     overflow:scroll;
-    scrollbar-color: rgb(254, 254, 254) #ec7c7c;
+    scrollbar-color: rgba(13, 111, 11, 0.665) #267fde;
     scrollbar-width: thin;
 }
 .cart img{
@@ -30,7 +30,7 @@
 }
 .cart-button{
     align-items: center;
-    background:rgb(19, 148, 16);
+    background:rgba(13, 111, 11, 0.665);
     border-radius: 9999px;
     cursor: pointer;
     display: flex;
