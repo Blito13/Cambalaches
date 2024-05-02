@@ -3,7 +3,7 @@ import {cartReducer , cartInitialState} from '../reducers/cart.js';
 import axios from 'axios';
 import { collection , getDocs } from "firebase/firestore";
 import { db } from "../firebase/config.js";
-
+import {doc , getDoc} from "firebase/firestore";
 export const CartContext = createContext();
 
 function useCartReducer (){
@@ -27,6 +27,16 @@ function useCartReducer (){
             payload :json.data, 
         })
     }
+    const getDetailProduct = async(id) => {
+        const docRef = doc(db , "productos" ,  id);
+        const docResp =  await getDoc(docRef);
+        const resp = {...docResp.data() ,id : docResp.id}
+        console.log(resp);
+        return dispatch( {
+            type : 'GET_DETAIL_PRODUCT', 
+            payload :resp, 
+        })
+    }
     const removeFromCart = product => dispatch({
         type:'REMOVE_FROM_CART',
         payload : product
@@ -43,11 +53,11 @@ function useCartReducer (){
     })
 
     const clearCart = () => dispatch({type : 'CLEAR_CART'})
-    return {state , addToCart ,removeFromCart , clearCart ,sendForm ,getTotal , getProducts} 
+    return {state , addToCart ,removeFromCart , clearCart ,sendForm ,getTotal , getProducts ,getDetailProduct} 
 }
 
 export function CartProvider ({children}) {
-    const {state ,addToCart ,removeFromCart , clearCart , sendForm ,getTotal , getProducts} = useCartReducer();
+    const {state ,addToCart ,removeFromCart , clearCart , sendForm ,getTotal , getProducts , getDetailProduct} = useCartReducer();
     
     return (
         <CartContext.Provider value = {{
