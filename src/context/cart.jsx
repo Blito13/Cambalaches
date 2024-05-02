@@ -1,6 +1,9 @@
 import { useReducer ,  createContext } from "react";
 import {cartReducer , cartInitialState} from '../reducers/cart.js';
 import axios from 'axios';
+import { collection , getDocs } from "firebase/firestore";
+import { db } from "../firebase/config.js";
+
 export const CartContext = createContext();
 
 function useCartReducer (){
@@ -10,6 +13,20 @@ function useCartReducer (){
         type:'ADD_TO_CART',
         payload : product
     })
+    const getProducts = async(dispatch) => {
+        const productosRef = collection(db , "productos");
+        var json =  await getDocs(productosRef);
+        console.log(json.docs[0].data)
+        console.log(json.docs[0].id)
+        let resp = json.docs.map((doc)=>{
+            return {...doc.data() , id :doc.id}
+        })
+        console.log(resp)
+        return dispatch( {
+            type : 'GET_PRODUCTS', 
+            payload :json.data, 
+        })
+    }
     const removeFromCart = product => dispatch({
         type:'REMOVE_FROM_CART',
         payload : product
@@ -26,11 +43,11 @@ function useCartReducer (){
     })
 
     const clearCart = () => dispatch({type : 'CLEAR_CART'})
-    return {state , addToCart ,removeFromCart , clearCart ,sendForm ,getTotal} 
+    return {state , addToCart ,removeFromCart , clearCart ,sendForm ,getTotal , getProducts} 
 }
 
 export function CartProvider ({children}) {
-    const {state ,addToCart ,removeFromCart , clearCart , sendForm ,getTotal} = useCartReducer();
+    const {state ,addToCart ,removeFromCart , clearCart , sendForm ,getTotal , getProducts} = useCartReducer();
     
     return (
         <CartContext.Provider value = {{
