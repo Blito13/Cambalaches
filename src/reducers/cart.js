@@ -14,7 +14,9 @@ export const CART_ACTION_TYPES = {
   REMOVE_FROM_CART: 'REMOVE_FROM_CART',
   CLEAR_CART: 'CLEAR_CART',
   SEND_FORM: 'SEND_FORM',
-  TOTAL_PRICE: 'TOTAL_PRICE'
+  TOTAL_PRICE: 'TOTAL_PRICE',
+  GET_PRODUCTS : 'GET_PRODUCTS',
+  GET_DETAILS : 'GET_DETAILS'
 };
 
 // Función para actualizar el localStorage con el estado del carrito
@@ -110,6 +112,10 @@ export const cartReducer = (state, action) => {
       updateLocalStorage(cleared);
       return cleared;
 
+    case CART_ACTION_TYPES.GET_PRODUCTS:
+      let justo = action.payload;
+      console.log(justo)
+      return state
     case CART_ACTION_TYPES.CLEAR_CART:
       const clear  = {
         cart : [],

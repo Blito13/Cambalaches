@@ -1,14 +1,18 @@
 import "./Products.css";
 import { AddToCartIcon, RemoveFromCartIcon } from "./Icons";
 import { useCart } from "../hooks/useCart";
+import { useEffect } from "react";
 /* import  alfajoresChocolate from "../media/realMedia/alfajoresChocolate.jpeg" */
 
 export function Products ({ products }) {
-    const {addToCart ,cart,  total, removeFromCart ,clearCart} = useCart();
-  
+    const {addToCart ,cart,  total, removeFromCart ,clearCart ,getProducts} = useCart();
+  console.log(getProducts)
     const checkProductInCart = product => {
         return cart.cart.some(item => item.id === product.id)
     }
+   /*  useEffect(()=>{
+         getProducts();
+    },[]) */
     return(
         <main className='products'>
            {/* <img src={alfajoresChocolate} alt = "ss"></img> */}

@@ -13,30 +13,42 @@ function useCartReducer (){
         type:'ADD_TO_CART',
         payload : product
     })
-    const getProducts = async(dispatch) => {
-        const productosRef = collection(db , "productos");
-        var json =  await getDocs(productosRef);
-        console.log(json.docs[0].data)
-        console.log(json.docs[0].id)
-        let resp = json.docs.map((doc)=>{
-            return {...doc.data() , id :doc.id}
-        })
-        console.log(resp)
-        return dispatch( {
-            type : 'GET_PRODUCTS', 
-            payload :json.data, 
-        })
+    const getProducts = async (dispatch) => {
+            try{
+                const productosRef = collection(db , "productos");
+                var json =  await getDocs(productosRef);
+                console.log(json.docs[0].data)
+                console.log(json.docs[0].id)
+                let resp = json.docs.map((doc)=>{
+                    return {...doc.data() , id :doc.id}
+                })
+                console.log(resp)
+                return dispatch( {
+                    type : 'GET_PRODUCTS', 
+                    payload :json.data, 
+                })
+
+            }  catch(error){
+                console.log(error)
+            }
+        
     }
-    const getDetailProduct = async(id) => {
-        const docRef = doc(db , "productos" ,  id);
-        const docResp =  await getDoc(docRef);
-        const resp = {...docResp.data() ,id : docResp.id}
-        console.log(resp);
-        return dispatch( {
-            type : 'GET_DETAIL_PRODUCT', 
-            payload :resp, 
-        })
-    }
+    const getDetailProduct  = async(id) => {
+        
+            try{
+                const docRef = doc(db , "productos" ,  id);
+                const docResp =  await getDoc(docRef);
+                const resp = {...docResp.data() ,id : docResp.id}
+                console.log(resp);
+                return dispatch( {
+                    type : 'GET_DETAILS', 
+                    payload :resp, 
+                })
+            }catch (error){
+                console.log(error)
+            }
+          
+        }
     const removeFromCart = product => dispatch({
         type:'REMOVE_FROM_CART',
         payload : product
@@ -66,7 +78,9 @@ export function CartProvider ({children}) {
             removeFromCart,
             clearCart,
             sendForm,
-            getTotal
+            getTotal,
+            getDetailProduct,
+            getProducts
         }}>
             {children}
         </CartContext.Provider>

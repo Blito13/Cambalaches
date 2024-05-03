@@ -5,6 +5,7 @@ import logo1 from '../media/1.jpg'
 import logo4 from '../media/4.jpg'
 import logo3 from '../media/3.jpg'
 import lg from '../media/logo1.jpg';
+import { useEffect } from 'react';
 export function Header () {
     return (
         <header style ={{display : "flex" , flexDirection :"column" , justifyContent : "center" , alignItems : "center"}}>
