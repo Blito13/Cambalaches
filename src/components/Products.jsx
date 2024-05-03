@@ -9,6 +9,7 @@ export function Products ({ products }) {
     const checkProductInCart = product => {
         return cart.cart.some(item => item.id === product.id)
     }
+    console.log(products)
     return(
         <main className='products'>
            {/* <img src={alfajoresChocolate} alt = "ss"></img> */}
