@@ -18,25 +18,28 @@ import {doc , getDoc} from "firebase/firestore";
 
 
 function App() {
-  
-  
-  useEffect(()=> {
-    
-    const productosRef = collection(db , "productos");
-    let ac = []
-    getDocs(productosRef)
-    .then((resp) => {
-    let achiro =  resp.docs.map((doc)=>{
-          return {...doc.data() , id :doc.id}
-      })
-      ac.push(achiro)
-    });
-    console.log(ac)
-   
-  },[])
+  const [employees, setEmployees] = useState([]);
   const {filters ,filterProducts} = useFilters();
-  const filteredProducts = filterProducts(initialProducts);
-
+  const filteredProducts = filterProducts(employees);
+  
+  const getEmployees = async () => {
+    console.log("entra a la func")
+    const productosRef = collection(db , "productos");
+        var json =  await getDocs(productosRef);
+        console.log(json)
+        
+        let resp = json.docs.map((doc)=>{
+            return {...doc.data() , id :doc.id}
+        })
+        console.log(resp)
+    setEmployees(resp)
+  }
+  console.log(employees)
+  useEffect(()=>{
+   
+    getEmployees()
+  },[]);
+  console.log(employees, "app" ,filteredProducts)
   return (
     <CartProvider>
         <Header/>

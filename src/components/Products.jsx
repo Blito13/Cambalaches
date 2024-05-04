@@ -6,19 +6,17 @@ import { useEffect } from "react";
 
 export function Products ({ products }) {
     const {addToCart ,cart,  total, removeFromCart ,clearCart ,getProducts} = useCart();
-  console.log(getProducts)
+  console.log(products)
     const checkProductInCart = product => {
         return cart.cart.some(item => item.id === product.id)
     }
-   /*  useEffect(()=>{
-         getProducts();
-    },[]) */
+    console.log(products)
     return(
         <main className='products'>
            {/* <img src={alfajoresChocolate} alt = "ss"></img> */}
             <ul>
                 {
-                    products.slice(0,11).map(product =>{
+                    products.map(product =>{
                         const isProductInCart = checkProductInCart(product)
                         return (
                         <li key ={product.id}>

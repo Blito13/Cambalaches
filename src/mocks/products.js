@@ -1,4 +1,8 @@
 /* import * as AllImages from '../media/realMedia/indexMedia'; */
+import { collection , getDocs } from "firebase/firestore";
+import { db } from "../firebase/config.js";
+import {doc , getDoc} from "firebase/firestore";
+
    export const products=[
       {
     id: 30,

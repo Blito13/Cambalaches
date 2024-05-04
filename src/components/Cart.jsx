@@ -31,7 +31,7 @@ export function Cart () {
     console.log(cartCheckBoxId)
     const {cart , clearCart , addToCart , sendCart ,getTotal } = useCart();
     const [isChecked, setIsChecked] = useState(false);
-   
+   localStorage.removeItem("cart")
     return (
         <>
              <label className="cart-button" htmlFor={cartCheckBoxId}>
