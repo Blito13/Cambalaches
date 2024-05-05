@@ -39,10 +39,10 @@ export function Filters () {
             <div>
                 <label htmlFor={categoryFilterId}>Categoria</label>
                     <select id={categoryFilterId} onChange={handleCategory}>
-                        <option value = 'Usados'>Usados</option>
+                        <option value = 'usados'>Usados</option>
                         <option value = 'Colecciones'>Colecciones</option>
-                        <option value = 'Sorpresas'>Sorpresas</option>
-                        <option value = 'Reciclados'>Reciclados</option>
+                        <option value = 'musica'>musica</option>
+                        <option value = 'libros'>libros</option>
                     </select>
             </div>
         </section>
