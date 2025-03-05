@@ -1,14 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import './index.css';
-import axios from 'axios';
-import { FiltersProvider } from './context/filters.jsx';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import App from './App';
 
-/* axios.defaults.baseURL = import.meta.env.VITE_APP_BE_URL; */
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <FiltersProvider>
+ReactDOM.render(
+  <Provider store={store}>
     <App />
-  </FiltersProvider>
-)
+  </Provider>,
+  document.getElementById('root')
+);
