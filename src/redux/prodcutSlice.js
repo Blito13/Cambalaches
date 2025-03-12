@@ -9,8 +9,8 @@ const productSlice = createSlice({
   name: 'auction',
   initialState,
   reducers: {
-   getProducts ( state, action ) {
-    //fetch
+   setProducts ( state, action ) {
+    state =  action.payload;
    },
    filterProducts ( state, action ) {
     const { price, category, title} = action.payload;

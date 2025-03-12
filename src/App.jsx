@@ -1,11 +1,13 @@
 import React from 'react';
-import Auction from './components/Auction';
+import {Auction} from './components/Auction';
+import {Products} from './components/Products';
 
 const App = () => {
   return (
-    <div className="App">
-      <Auction />
-    </div>
+    <>
+    <Auction/>
+    <Products/>
+    </>
   );
 };
 
