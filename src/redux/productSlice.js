@@ -10,7 +10,8 @@ const productSlice = createSlice({
   initialState,
   reducers: {
    setProducts ( state, action ) {
-    state =  action.payload;
+    console.log(action.payload, "cachito la cuadra")
+    state.products =  action.payload;
    },
    filterProducts ( state, action ) {
     const { price, category, title} = action.payload;
@@ -22,5 +23,5 @@ const productSlice = createSlice({
   },
 })
 
-export const { getProducts, filterProducts, showDetails } = productSlice.actions;
+export const { setProducts, filterProducts, showDetails } = productSlice.actions;
 export default productSlice.reducer;

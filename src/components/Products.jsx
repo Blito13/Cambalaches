@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Product = ({ product, onBid }) => {
+export const Products = ({ id, product, state}) => {
+    console.log(id) 
   return (
-    <div className="product">
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
-      <p>Precio actual: ${product.currentPrice}</p>
-      <button onClick={() => onBid(product.id)}>Pujar</button>
+    <div style={{display: "flex",  width:"300px", border: "6px solid red"}}>
+      <li key={id}>
+      <h3>{product}</h3>
+      <p>{state}</p>
+      </li>
     </div>
   );
 };
 
-export default Product;
