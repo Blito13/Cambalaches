@@ -1,0 +1,54 @@
+/* Estilos para cada producto (li) */
+.products li {
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #e0e0e0; /* Borde ligero */
+  border-radius: 8px; /* Esquinas redondeadas */
+  padding: 16px; /* Espaciado interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
+}
+
+/* Efecto hover para los productos */
+.products li:hover {
+  transform: translateY(-4px); /* Levanta el producto ligeramente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Estilos para el título del producto (h3) */
+.products h3 {
+  font-size: 1.25rem; /* Tamaño del título */
+  margin: 0 0 8px 0; /* Margen inferior */
+  color: #333333; /* Color del texto */
+}
+
+/* Estilos para los botones */
+.products button {
+  background-color: #007bff; /* Color de fondo azul */
+  color: #ffffff; /* Color del texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Esquinas redondeadas */
+  padding: 8px 16px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor al pasar */
+  font-size: 0.875rem; /* Tamaño del texto */
+  margin-right: 8px; /* Margen derecho */
+  transition: background-color 0.2s ease; /* Transición suave */
+}
+
+/* Efecto hover para los botones */
+.products button:hover {
+  background-color: #0056b3; /* Color de fondo más oscuro */
+}
+
+/* Estilos para el enlace (a) */
+.products a {
+  color: #007bff; /* Color del enlace */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 0.875rem; /* Tamaño del texto */
+  display: block; /* Hace que el enlace sea un bloque */
+  margin-top: 8px; /* Margen superior */
+}
+
+/* Efecto hover para el enlace */
+.products a:hover {
+  text-decoration: underline; /* Subrayado al pasar */
+}

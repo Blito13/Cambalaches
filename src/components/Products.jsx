@@ -1,14 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Products.css'; // Importa el archivo CSS
 
-export const Products = ({ id, product, state}) => {
-    console.log(id) 
+export const Products = ({ id, product, state }) => {
+  const miniFunc = (e, id) => {
+    e.preventDefault();
+    console.log(`Ofertar producto ${id}`);
+  };
+
   return (
-    <div style={{display: "flex",  width:"300px", border: "6px solid red"}}>
-      <li key={id}>
+    <li>
       <h3>{product}</h3>
-      <p>{state}</p>
-      </li>
-    </div>
+      {state === true ? (
+        <button onClick={(e) => miniFunc(e, id)}>Ofertar</button>
+      ) : (
+        <button>Comprar</button>
+      )}
+      <Link to={`/details/${id}`}>{product}</Link>
+    </li>
   );
 };
-

@@ -1,13 +1,24 @@
 import React from 'react';
-import { Auction } from './components/Auction';
-import { ProductList } from './components/ProductList';
-
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Home } from './components/Home';
+import { Details } from './components/Details';
+import { useFetch } from './useFetch';
 const App = () => {
+   const { products } = useFetch("https://jsonplaceholder.typicode.com/todos");
   return (
-    <>
-    <Auction/>
-    <ProductList/>
-    </>
+    <Router>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/">About</Link>
+        <Link to="/">Profile</Link>
+        <Link to="/">Settings</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/details/:id" element={<Details />} />
+      </Routes>
+    </Router>
   );
 };
 

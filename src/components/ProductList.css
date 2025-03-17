@@ -1,0 +1,16 @@
+/* ProductList.css */
+
+/* Estilos para el contenedor principal */
+.products-container {
+    padding: 16px; /* Padding alrededor del contenedor */
+  }
+  
+  /* Estilos para la lista de productos */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Columnas dinámicas */
+    gap: 16px; /* Espacio entre productos */
+    list-style: none; /* Quita los estilos de lista */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+  }
