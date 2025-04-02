@@ -16,6 +16,7 @@ export const ProductList = () => {
                 id={product.id}
                 product={product.title}
                 state={product.completed}
+                imagen={product.thumbnail.length >1 ? product.thumbnail[0] : product.thumbnail}
               />
             ))}
           </ul>
