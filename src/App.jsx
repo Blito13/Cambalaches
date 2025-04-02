@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home } from './components/Home';
 import { Details } from './components/Details';
 import { useFetch } from './useFetch';
-
+import { useLoadProducts }  from './newHook'
 const App = () => {
-   const { products } = useFetch("https://jsonplaceholder.typicode.com/todos");
+   const { products } = useLoadProducts("productos");
+   console.log(products)
   return (
     <Router>
       <nav>
@@ -14,7 +15,7 @@ const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/details/:id" element={<Details />} />
+        {/* <Route path="/details/:id" element={<Details />} /> */}
       </Routes>
     </Router>
   );

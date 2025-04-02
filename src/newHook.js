@@ -5,13 +5,14 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from './firebase/config';
 import { setProducts } from './redux/productSlice';
 
-export const useLoadProducts = () => {
+export const useLoadProducts = (nameData) => {
+  console.log("pasando", nameData)
   const dispatch = useDispatch();
-  const { items, status } = useSelector(state => state.products);
-
+  const products = useSelector(state => state.products);
+  console.log( Object.keys(products).length)
   const loadProducts = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'productos'));
+      const querySnapshot = await getDocs(collection(db, nameData));
       const productsData = querySnapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
@@ -25,15 +26,13 @@ export const useLoadProducts = () => {
 
   // Carga inicial automática
   useEffect(() => {
-    if (items.length === 0 && status === 'idle') {
+    if (Object.keys(products.products).length < 1) {
       loadProducts();
     }
   }, []);
 
   return {
-    products: items,
-    isLoading: status === 'loading',
-    error: status === 'failed',
+    products: products,
     refreshProducts: loadProducts
   };
 };
