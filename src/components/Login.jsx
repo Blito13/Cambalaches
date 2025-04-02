@@ -31,6 +31,7 @@ const Login = () => {
         placeholder="Email"
         value={formData.email}
         onChange={handleChange}
+        autoComplete='TypeEmail'
       />
       <input
         type="password"
@@ -38,6 +39,7 @@ const Login = () => {
         placeholder="Password"
         value={formData.password}
         onChange={handleChange}
+        autoComplete='typePass'
       />
       <button type="submit">Login</button>
     </form>
