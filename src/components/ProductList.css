@@ -1,5 +1,8 @@
 /* ProductList.css */
-
+:root {
+  --max: 18rem
+  }
+  
 /* Estilos para el contenedor principal */
 .products-container {
     padding: 16px; /* Padding alrededor del contenedor */
@@ -13,4 +16,19 @@
     list-style: none; /* Quita los estilos de lista */
     margin: 0; /* Elimina el margen predeterminado */
     padding: 0; /* Elimina el padding predeterminado */
+  }
+  .products li {
+    background-color: #6fa1d6;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .products img{
+    width: 100%;
+    max-width: var(--max);
+    height: calc(var(--max));
+    object-fit: cover;
+    padding: 50px;
   }

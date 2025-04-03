@@ -23,7 +23,7 @@
 
 /* Estilos para los botones */
 .products button {
-  background-color: #007bff; /* Color de fondo azul */
+  background-color: #0080ff; /* Color de fondo azul */
   color: #ffffff; /* Color del texto blanco */
   border: none; /* Sin borde */
   border-radius: 4px; /* Esquinas redondeadas */
@@ -32,6 +32,7 @@
   font-size: 0.875rem; /* Tamaño del texto */
   margin-right: 8px; /* Margen derecho */
   transition: background-color 0.2s ease; /* Transición suave */
+  width: 400px;
 }
 
 /* Efecto hover para los botones */
