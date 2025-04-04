@@ -11,8 +11,6 @@ const productSlice = createSlice({
   initialState,
   reducers: {
    setProducts ( state, action ) {
-    console.log(action.payload, "cachito la cuadra")
-    console.log(state.counter)
     state.products =  action.payload;
     state.counter = state.counter +1
    },
@@ -22,9 +20,16 @@ const productSlice = createSlice({
    },
    showDetails ( state, action ) {
     const {id} = action.payload
-   } 
+   },
+   contactOwner (state, action ) {
+   const {number, text} = action.payload;
+
+   console.log(number, text)
+    const whatsappLink = `whatsapp://send?phone=${number}&text=${encodeURIComponent(text)}`;
+    window.location.href = whatsappLink;
+   }
   },
 })
 
-export const { setProducts, filterProducts, showDetails } = productSlice.actions;
+export const { setProducts, filterProducts, showDetails, contactOwner } = productSlice.actions;
 export default productSlice.reducer;
