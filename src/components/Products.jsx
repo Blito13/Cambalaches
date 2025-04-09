@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Products.css'; // Importa el archivo CSS
-import { SiWhatsapp } from "react-icons/si";
-import { IconContext } from "react-icons";
-export const Products = ({ id, product, state, imagen, owner }) => {
+import './Products.css';
 
-console.log(imagen.length)
+export const Products = ({ id, product, imagen }) => {
   return (
-    <li>
-      <h3 style ={{fontSize : "1.5em", color:"black", padding :"20px"}}>{product}</h3>
-      <img 
-        src={imagen} 
-        alt="photo"
-        />
-      <Link style ={{fontSize : "1.5em", color:"black", padding :"20px"}}to={`/details/${id}`}>Mas detalles</Link>
-    </li>
+    <Link to={`/details/${id}`} className="product-card">
+      <div 
+        className="product-image" 
+        style={{ backgroundImage: `url(${imagen})` }}
+      >
+        <div className="product-overlay">
+          <h3 className="product-title">{product}</h3>
+        </div>
+      </div>
+    </Link>
   );
 };

@@ -5,6 +5,8 @@ import { SiWhatsapp } from "react-icons/si";
 import { IconContext } from "react-icons";
 import { useDispatch } from "react-redux";
 import { contactOwner } from "../redux/productSlice"; 
+import './Details.css';
+
 
 export const Details = () =>{
     const {id} = useParams();
@@ -23,25 +25,27 @@ export const Details = () =>{
         dispatch(contactOwner(form))
       };
     return(
-        <>
-        <h1>
+        <div className="product">
+            <h1>
             {element[0].title}
-        </h1>
-        <h1>
+            </h1>
+            <h1>
             {element[0].description}
-        </h1>  
-        {
-            element[0].thumbnail.map((e) =>
-            <img src={e} alt="pic" />
-            )
-        }
+        </  h1>  
+            <div className="img-container">
+                {
+                    element[0].thumbnail.map((e) =>
+                    <img src={e} alt="pic" />
+                    )
+                }
+            </div>
         <>
-          <IconContext.Provider value={{ color: "blue", size : "3em"}}>
+          <IconContext.Provider value={{ color: "blue", size : "1em"}}>
                   <button onClick={(e)=>contact(e)}>
                     <SiWhatsapp/>
                   </button>
-                </IconContext.Provider>
+           </IconContext.Provider>
         </>
-        </>
+        </div>
     )
 }

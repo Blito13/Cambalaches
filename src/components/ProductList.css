@@ -1,6 +1,6 @@
 /* ProductList.css */
 :root {
-  --max: 18rem
+  --max: 12rem
   }
   
 /* Estilos para el contenedor principal */
@@ -11,11 +11,12 @@
   /* Estilos para la lista de productos */
   .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Columnas dinámicas */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas dinámicas */
     gap: 16px; /* Espacio entre productos */
     list-style: none; /* Quita los estilos de lista */
     margin: 0; /* Elimina el margen predeterminado */
     padding: 0; /* Elimina el padding predeterminado */
+    
   }
   .products li {
     background-color: #6fa1d6;
@@ -28,7 +29,8 @@
   .products img{
     width: 100%;
     max-width: var(--max);
-    height: calc(var(--max));
+    height: calc(var(--max) * 0.5);
     object-fit: cover;
-    padding: 50px;
+    padding: 10px;
   }
+  

@@ -1,0 +1,33 @@
+.product{
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+  }
+.img-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 0.2fr)); /* Columnas dinámicas */
+  gap: 16px; /* Espacio entre productos */
+  list-style: none; /* Quita los estilos de lista */
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el padding predeterminado */
+  position: relative;
+}
+
+.img-container img {
+    transition: transform 0.3s;
+    width: 100%;
+    max-width: var(--max);
+    height: calc(var(--max) * 0.5);
+    object-fit: cover;
+    padding: 10px;
+  }
+  
+.img-container img:hover {
+    transform: scale(2); /* Aumenta el tamaño al 150% */
+    z-index: 10; /* Para que superponga otros elementos */
+    
+
+  }
+
+
+  
