@@ -1,9 +1,17 @@
-/* Estilos para la card de producto */
+.product-item {
+  list-style: none;
+/*   margin: 5px; */
+  display: flex;
+/*   border: 3px rgb(49, 102, 217) solid; */
+  align-items: center;
+  margin : 12px;
+}
+
 .product-card {
   display: block;
   position: relative;
   width: 100%;
-  height: 250px; /* Altura fija, puedes ajustarla */
+  min-height: 100px; /* Altura mínima de respaldo */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -11,20 +19,14 @@
   text-decoration: none;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Contenedor de la imagen de fondo */
 .product-image {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* Efecto overlay */

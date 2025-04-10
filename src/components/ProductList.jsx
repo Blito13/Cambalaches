@@ -4,7 +4,7 @@ import { Products } from './Products';
 import './ProductList.css';
 export const ProductList = () => {
   const data = useSelector((state) => state.products);
-
+  const randomHeight = Math.floor(Math.random() * 150) + 100;
   return (
     <>
       {data.products.length > 1 ? (

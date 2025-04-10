@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import './Products.css';
 
 export const Products = ({ id, product, imagen }) => {
+  const randomHeight = Math.floor(Math.random() * 150) + 100;
   return (
-    <Link to={`/details/${id}`} className="product-card">
+   <div className='product-item' style={{height:`${randomHeight}px`}}>
+    <Link to={`/details/${id}`} className="product-card" style={{height:`${randomHeight}px`}}>
       <div 
         className="product-image" 
         style={{ backgroundImage: `url(${imagen})` }}
@@ -14,5 +16,6 @@ export const Products = ({ id, product, imagen }) => {
         </div>
       </div>
     </Link>
+   </div> 
   );
 };
