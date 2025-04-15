@@ -6,6 +6,7 @@ import { IconContext } from "react-icons";
 import { useDispatch } from "react-redux";
 import { contactOwner } from "../redux/productSlice"; 
 import './Details.css';
+import { Link } from "react-router-dom";
 
 
 export const Details = () =>{
@@ -26,12 +27,13 @@ export const Details = () =>{
       };
     return(
         <div className="product">
+            <Link to={"/"}>Go back Jo-Jo</Link>
             <h1>
             {element[0].title}
             </h1>
             <h1>
             {element[0].description}
-        </  h1>  
+            </h1>  
             <div className="img-container">
                 {
                     element[0].thumbnail.map((e) =>

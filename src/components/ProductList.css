@@ -2,40 +2,25 @@
 :root {
   --max: 12rem
   }
-  
-/* Estilos para el contenedor principal */
 .products-container {
-/*    display: block; */
+
    justify-content: center;
    align-items: center;
-/*    border: 3px rgb(124, 143, 32) solid; */
-    
+   background-color: #373844;
+   margin: 10px 10px;
   }
   
-  /* Estilos para la lista de productos */
   .products {
-
-/*     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 0.5fr)); */
-    columns: 200px;
+    display: block;
+    columns: 250px;
     column-gap: 16px; 
     padding: 0%;
-    row-gap: 5px;
+    
   }
-  .products li{
-    border: 3px red solid;
-  }
-  .products a {
-/*     border: red 4px solid; */
-/* border: 3px red solid; */
-    gap: 10px;
-  }
-
   .products img{
     width: 100%;
     max-width: var(--max);
     height: calc(var(--max) * 0.5);
     object-fit: cover;
-  /*   padding: 10px; */
   }
   
