@@ -1,77 +1,91 @@
 .navbar{
 margin: 0%;
 box-sizing: border-box;
-
-/* border:1px solid red; */
+position: fixed;
+left: 100px;
+right: 100px;
+z-index: 2000;
 }
 .nav-container{
-    padding: 0%;
-    display: flex;
+padding: 0%;
+display: flex;
+background-color: #373844;
+}
+.nav-container button{
+    display: none;
 }
 .logo{
-    width: 50%;
-    margin-left: 60px;
-    font-weight: 600;
-    color: #70a67c;
+width: 50%;
+margin-left: 60px;
+font-weight: 600;
+color: #70a67c;
 }
 .nav-container nav{
-    box-sizing: border-box;
-    width: 50%;
+box-sizing: border-box;
+width: 50%;
 }
 .nav-container ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style-type: none;
-    box-sizing: border-box;
-    margin: 0%;
-    height: 100%;
-    padding: 0%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+list-style-type: none;
+box-sizing: border-box;
+margin: 0%;
+height: 100%;
+padding: 0%;
     
     
     
 }
 .nav-container li{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
+width: 50%;
+height: 100%;
+display: flex;
+box-sizing: border-box;
+justify-content: center;
+align-items: center;
 }
 .nav-container a{
-    font-size: small;
-    justify-content: center;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    padding:0px;
-    justify-items: center;
-    font-weight: 800;
+font-size: small;
+justify-content: center;
+align-items: center;
+color: rgb(255, 255, 255);
+text-decoration: none;
+padding:0px;
+justify-items: center;
+font-weight: 800;
 }
 .nav-container a:hover {
-  color: #70a67c;
+color: #70a67c;
 }
 
 @media (max-width : 768px) {
+    .navbar{
+        border:2px solid #70a67c;
+        position: relative;
+        margin: 0%;
+box-sizing: border-box;
+position: fixed;
+left: 100px;
+right: 100px;
+z-index: 2000;
+        }
 
     .nav-container{
-        display: flex;
-        flex-direction: column;
-   
-        justify-content: center;
+        background-color: #fff;
         box-sizing: border-box;
         
-   
+        justify-content: center;
+
     }
     .nav-container nav{
-      /*   border:2px red solid; */
         align-content: center;
         width: 100%;
+        display:none    
     }
     .logo{
         width: 100%;
-        text-align: center;
+        text-align: left;
         margin: 0%;
     }
     .nav-container ul{

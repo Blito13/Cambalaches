@@ -1,34 +1,92 @@
-.product{
-   display: flex;
-   flex-direction: column;
-   overflow: hidden;
-   font-family: "lato", sans-serif;
-  }
-.img-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 0.2fr)); /* Columnas dinámicas */
-  gap: 16px; /* Espacio entre productos */
-  list-style: none; /* Quita los estilos de lista */
-  margin: 0; /* Elimina el margen predeterminado */
-  padding: 0; /* Elimina el padding predeterminado */
-  position: relative;
-}
 
-.img-container img {
-    transition: transform 0.3s;
-    width: 100%;
-    max-width: var(--max);
-    height: calc(var(--max) * 0.5);
-    object-fit: cover;
-    padding: 10px;
+  .image-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
-.img-container img:hover {
-    transform: scale(2); /* Aumenta el tamaño al 150% */
-    z-index: 10; /* Para que superponga otros elementos */
-    
-
+  .main-image-container {
+    width: 500px;
+    height: 500px;
+   /*  border: 1px solid #e0e0e0; */
+    border-radius: 8px;
+    overflow: hidden;
+    object-fit: cover;
+   
+    border:3px solid green;
   }
-
-
+  
+  .main-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .main-image:hover {
+    transform: scale(1.02);
+    
+  }
+  
+  .thumbnail-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    width: 100%;
+    
+  }
+  
+  .thumbnail-selected {
+    width: 80px;
+    height: 80px;
+    /*   border-radius: 4px; */
+    cursor: pointer;
+    overflow: hidden;
+    flex-shrink: 0;
+    /*     transition: border-color 0.2s ease; */
+    border: 4px solid red ;
+  }
+  
+  .thumbnail  {
+    width: 80px;
+    height: 80px;
+      border : 3px solid rgb(65, 140, 11);
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .thumbnail img {
+    width: 80px;
+    height: 80px;
+ 
+  }
+  
+  .thumbnail:hover {
+    border-color: #ccc;
+  }
+  
+  .thumbanil active {
+    border-color: #007bff;
+    width: 80px;
+    height: 80px;
+  border: 2px solid red;
+  }
+  
+  /* Scrollbar personalizada (opcional) */
+  .thumbnail-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .thumbnail-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
   
