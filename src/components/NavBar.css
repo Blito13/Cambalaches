@@ -112,7 +112,6 @@ color: #70a67c;
         background-color: #584f4f;
         display: block;
         margin: 0;
-        /* background: #981b1b; */
         position: absolute;
         top: -200px;
         height: 200px;
@@ -156,7 +155,6 @@ color: #70a67c;
     }
     .nav-container a:hover {
         color: lightgreen;
-      
       }
         
 }

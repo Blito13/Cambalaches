@@ -37,22 +37,28 @@ export const Details = () =>{
             {element[0].description}
             </h1>   */}
             <div className="main-image-container">
-                <img 
-                src={selected}
-                alt="pic" 
-                className="main-image"
-                />
+                <i class="fa-solid fa-arrow-left"  onClick={()=>setSelected(selected>element[0].thumbnail.length?selected-1:0) }></i>
+                    <img 
+                    src={selected}
+                    alt="pic" 
+                    className="main-image"
+                    />
+                <i class="fa-solid fa-arrow-right"  onClick={()=>setSelected(selected<element[0].thumbnail.length?selected+1:element[0].thumbnail.length-1) }></i>
             </div>
+            
             <div className="thumbnail-container">
                 {element[0].thumbnail.map((e, i) => (
+                    <>
+                    <div key={i}  onClick={()=>setSelected(element[0].thumbnail[i]) } className="thumbnail-dots"></div>
                     <div
                     className={selected=== e ?"thumbnail-selected" : "thumbnail"}
                     onClick={()=>setSelected(element[0].thumbnail[i]) }
                     >
                         <img key={i} src={e}  alt={`Miniatura ${i + 1}`}  />
                     </div>
+                    </>
                     )
-
+                    
                     
                 )
             }

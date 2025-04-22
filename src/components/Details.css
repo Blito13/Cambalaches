@@ -11,24 +11,25 @@
   .main-image-container {
     width: 500px;
     height: 500px;
-   /*  border: 1px solid #e0e0e0; */
     border-radius: 8px;
     overflow: hidden;
     object-fit: cover;
-   
     border:3px solid green;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    gap: 10px; 
   }
   
   .main-image {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     display: block;
     transition: transform 0.3s ease;
   }
   
   .main-image:hover {
     transform: scale(1.02);
-    
   }
   
   .thumbnail-container {
@@ -37,35 +38,54 @@
     overflow-x: auto;
     padding: 10px 0;
     width: 100%;
-    
+    align-items: center;
+    justify-content: center;
   }
   
-  .thumbnail-selected {
+  .thumbnail-selected { 
     width: 80px;
     height: 80px;
-    /*   border-radius: 4px; */
     cursor: pointer;
     overflow: hidden;
-    flex-shrink: 0;
-    /*     transition: border-color 0.2s ease; */
-    border: 4px solid red ;
+    display: none;
+  }
+  .thumbnail-selected img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    overflow: hidden;
+    display: none;
+
+  }
+  .thumbnail-dots{
+   display: flex;  
+   /* justify-content: center; */
+   align-items: center;
+   border: 3px solid rgb(65, 140, 11);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #000;
+
+
   }
   
   .thumbnail  {
+    border : 3px solid rgb(65, 140, 11);
     width: 80px;
     height: 80px;
-      border : 3px solid rgb(65, 140, 11);
-    width: 80px;
-    height: 80px;
-    border: 2px solid transparent;
+   /*  border: 2px solid transparent; */
     border-radius: 4px;
     cursor: pointer;
     overflow: hidden;
     flex-shrink: 0;
+    display: none;  
+
   }
   .thumbnail img {
     width: 80px;
     height: 80px;
+    display: none;
  
   }
   
