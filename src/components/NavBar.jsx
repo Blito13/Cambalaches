@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export const NavBar = () =>{
 const [active , setActive] = useState(false);
+console.log(active)
 const handleClick = () => {
     setActive(!active);
     console.log(active);
@@ -12,11 +13,12 @@ const handleClick = () => {
     return(
         <div className="navbar">
             <div className="nav-container">
-                <h2 className="logo">Cambalache®</h2>
+                <h2 className="logo">Cambalache®
                 <button className="btn" onClick={handleClick}>
-                    {active === false ? "O" : "X"}
+                {active === false ? "☰" : "✖"}
                 </button>
-                <nav>
+                </h2>
+                <nav className={active ? "active" : "close"}>
                     <ul>
                         <li className="nav"><a href="" className="outline">Descargas</a></li>
                         <li className="nav"><a href="" className="outline">Contacto</a></li>
