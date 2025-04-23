@@ -15,7 +15,7 @@ export const Details = () =>{
     const data = useSelector((state)=> state.products);
     const element = data.products.filter((p) => p.id === id);
     if (!element) return <div>Producto no encontrado</div>;
-    const [selected, setSelected] = useState(element[0].thumbnail[0]);
+    const [selected, setSelected] = useState(0);
     const text = `Hola necesito informacion acerca de ${ element[0].title}`;
     console.log(selected, "morreja")
     const contact = (e ) => {
@@ -37,22 +37,22 @@ export const Details = () =>{
             {element[0].description}
             </h1>   */}
             <div className="main-image-container">
-                <i class="fa-solid fa-arrow-left"  onClick={()=>setSelected(selected>element[0].thumbnail.length?selected-1:0) }></i>
+                <i class="fa-solid fa-arrow-left"  onClick={()=>setSelected(selected===0 ?selected : selected-1) }></i>
                     <img 
-                    src={selected}
+                    src={element[0].thumbnail[selected]}
                     alt="pic" 
                     className="main-image"
                     />
-                <i class="fa-solid fa-arrow-right"  onClick={()=>setSelected(selected<element[0].thumbnail.length?selected+1:element[0].thumbnail.length-1) }></i>
+                <i class="fa-solid fa-arrow-right"  onClick={()=>setSelected(selected===element[0].thumbnail.length-1?selected:selected+1) }></i>
             </div>
             
             <div className="thumbnail-container">
                 {element[0].thumbnail.map((e, i) => (
                     <>
-                    <div key={i}  onClick={()=>setSelected(element[0].thumbnail[i]) } className="thumbnail-dots"></div>
+                    <div key={i}  onClick={()=>setSelected(i) } className="thumbnail-dots"></div>
                     <div
                     className={selected=== e ?"thumbnail-selected" : "thumbnail"}
-                    onClick={()=>setSelected(element[0].thumbnail[i]) }
+                    onClick={()=>setSelected(i) }
                     >
                         <img key={i} src={e}  alt={`Miniatura ${i + 1}`}  />
                     </div>
