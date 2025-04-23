@@ -30,47 +30,68 @@ export const Details = () =>{
 
     return(
         <div className="image-carousel">
-            {/* <h1>
-            {element[0].title}
-            </h1>
-            <h1>
-            {element[0].description}
-            </h1>   */}
+            
+                <h1 className="title">
+                    {element[0].title}
+                </h1>
             <div className="main-image-container">
-                <i class="fa-solid fa-arrow-left"  onClick={()=>setSelected(selected===0 ?selected : selected-1) }></i>
-                    <img 
+                <button
+                    className="buttonLeft"
+                >
+                    <i  
+                        class="fa-solid fa-arrow-left"  
+                        onClick={()=>setSelected(selected===0 ?selected : selected-1) }
+                    />
+                </button>
+                <img 
                     src={element[0].thumbnail[selected]}
                     alt="pic" 
                     className="main-image"
+                />
+                <button
+                    className="buttonRight"
+                >
+                    <i 
+                        class="fa-solid fa-arrow-right"  
+                        onClick={()=>setSelected(selected===element[0].thumbnail.length-1?selected:selected+1) }
                     />
-                <i class="fa-solid fa-arrow-right"  onClick={()=>setSelected(selected===element[0].thumbnail.length-1?selected:selected+1) }></i>
+                </button>
             </div>
             
             <div className="thumbnail-container">
                 {element[0].thumbnail.map((e, i) => (
                     <>
-                    <div key={i}  onClick={()=>setSelected(i) } className="thumbnail-dots"></div>
+                    <div 
+                        key={i}  
+                        onClick={()=>setSelected(i) } 
+                        className={selected === i?"thumbnail-dots-selected" : "thumbnail-dots"}
+                    />
                     <div
-                    className={selected=== e ?"thumbnail-selected" : "thumbnail"}
-                    onClick={()=>setSelected(i) }
+                        className={selected=== i ?"thumbnail-selected" : "thumbnail"}
+                        onClick={()=>setSelected(i) }
                     >
                         <img key={i} src={e}  alt={`Miniatura ${i + 1}`}  />
                     </div>
                     </>
                     )
-                    
-                    
                 )
             }
             </div>
-        <>
-            <Link to={"/"}>Go back Jo-Jo</Link>
-          <IconContext.Provider value={{ color: "blue", size : "1em"}}>
-                  <button onClick={(e)=>contact(e)}>
-                    <SiWhatsapp/>
-                  </button>
-           </IconContext.Provider>
-        </>
+            <div>
+                <Link to={"/"}>Go back Jo-Jo</Link>
+                    <IconContext.Provider 
+                        value={{ color: "blue", size : "1em"}}>
+                    <button 
+                        onClick={(e)=>contact(e)}>
+                        <SiWhatsapp/>
+                    </button>
+                    </IconContext.Provider>
+            </div>
+            <div className="info-container">
+                <h1>
+                    {element[0].description}
+                </h1>
+            </div>
         </div>
     )
 }
