@@ -30,17 +30,18 @@ export const Details = () =>{
 
     return(
         <div className="image-carousel">
-            
-                <h1 className="title">
+            <div className="title">
+                <h1>
                     {element[0].title}
                 </h1>
+            </div>
             <div className="main-image-container">
                 <button
                     className="buttonLeft"
+                    onClick={()=>setSelected(selected===0 ?selected : selected-1) }
                 >
                     <i  
                         class="fa-solid fa-arrow-left"  
-                        onClick={()=>setSelected(selected===0 ?selected : selected-1) }
                     />
                 </button>
                 <img 
@@ -50,10 +51,10 @@ export const Details = () =>{
                 />
                 <button
                     className="buttonRight"
+                    onClick={()=>setSelected(selected===element[0].thumbnail.length-1?selected:selected+1) }
                 >
                     <i 
                         class="fa-solid fa-arrow-right"  
-                        onClick={()=>setSelected(selected===element[0].thumbnail.length-1?selected:selected+1) }
                     />
                 </button>
             </div>
@@ -77,6 +78,11 @@ export const Details = () =>{
                 )
             }
             </div>
+            <div className="info">
+                <h1>
+                    {element[0].description}
+                </h1>
+            </div>
             <div>
                 <Link to={"/"}>Go back Jo-Jo</Link>
                     <IconContext.Provider 
@@ -86,11 +92,6 @@ export const Details = () =>{
                         <SiWhatsapp/>
                     </button>
                     </IconContext.Provider>
-            </div>
-            <div className="info-container">
-                <h1>
-                    {element[0].description}
-                </h1>
             </div>
         </div>
     )

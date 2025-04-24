@@ -5,6 +5,7 @@ position: fixed;
 left: 100px;
 right: 100px;
 z-index: 2000;
+top: 0px;
 }
 .nav-container{
 padding: 0%;
