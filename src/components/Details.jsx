@@ -83,7 +83,7 @@ export const Details = () =>{
                     {element[0].description}
                 </h1>
             </div>
-            <div>
+            <div className="price">
                 <Link to={"/"}>Go back Jo-Jo</Link>
                     <IconContext.Provider 
                         value={{ color: "blue", size : "1em"}}>

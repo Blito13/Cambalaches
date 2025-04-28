@@ -4,6 +4,7 @@ import { NavBar } from "./NavBar";
 import { Hero } from "./Hero";
 import { Footer } from "./Footer";
 
+
 export const Home = () => {
 return(
     <div className="home-container">

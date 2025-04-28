@@ -5,7 +5,7 @@ import { Home } from './components/Home';
 import { Details } from './components/Details';
 import "./index.css"
 import { useLoadProducts }  from './newHook';
-import { NavBar } from './components/NavBar';
+
 const App = () => {
    const { products } = useLoadProducts("productos");
    console.log(products)

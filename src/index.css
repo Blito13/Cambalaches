@@ -1,11 +1,8 @@
+
 body{
   font-family: "roboto", sans-serif;
- /*  background-color: #393737; */
- background-color: #40414C;
+  background-color: #40414C;
   box-sizing: border-box;
   padding: 0;
-  margin: 0 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
 }
