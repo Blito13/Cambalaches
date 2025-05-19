@@ -1,31 +1,25 @@
 .image-carousel {
   display: flex;
   flex-direction: row;
-
   gap: 15px;
-  width: 100%;
-  height: 100vh;
-  margin: 0;
+  width: 90%;
+  height: 99vh;
+  margin: 0% 0% 0% 5%;
   padding: 0;
   position: relative;
-  border:3px solid red;
+overscroll-behavior: none;
+  /* border:3px solid rgb(45, 194, 12); */
+  gap: 13px;
+
+  
 }
 .main-image-container {
   width: 500px;
   height: 500px;
-  border:3px solid red;
-  left: 20%;
-  top: 15%;
+/*   border:3px solid red; */
+  left: 15%;
+  top: 8%;
   position: absolute;
-/*   padding: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  object-fit: cover;
-  display: flex;
-  justify-content: center ;
-  align-items: center;
-  gap: 10px; 
-  position: relative ; */
 }
 .main-image {
   width: 500px;
@@ -34,90 +28,106 @@
   margin: 0;
   border-radius: 20px;
   z-index: 0;
+  
   }
   .info{
-    background-color: #fff;
     position: absolute;
-    right: 5%;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+    left: 60%;
     top: 30%;
     width: 400px;
+    height: 28%;
     text-align: center;
+    overflow-y: scroll;
   }
   .title{
-    background-color: #fff;
+/*     background-color: #fff; */
     position: absolute;
-    right: 10%;
-    top: 20px;
+/*     right: 5%; */
+    left: 60%;
+    top: 8%;
+    width: 300px;
+    height: 28%;
+    padding: 0;
+    text-align: center;
+    /* border:3px solid red; */
     }
   .price{
-    color: red;
     text-decoration: none;
     position: absolute;
-    right: 15%;
+    width: 400px;
+    height: 28%;
+    left: 60%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    top: 70%;
+    top:59%;
     gap: 10px;
     }
+    .react-icons {
+      background-color: transparent;
+      color:#70a67c;
+      padding: 0%;
+      margin: 0%;
+      width: 100px;
+      height: 80px;
+    }
+    .link {
+      color: #70a67c;
+    }
+
 .buttonLeft {
   display: none;
-/*   position: absolute;
-  z-index: 2;
-  left: 8px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  cursor: pointer; */
 }
 .buttonRight {
   display: none;
-  /* position: absolute;
-  z-index: 2;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  border-radius: 50%; */
 }
 .main-image:hover {
 /*   transform: scale(1.50); */
   }
 .thumbnail-container {
+  overflow:scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  height: 480px;
   display: flex;
   flex-direction: column;
-  border:3px solid red;
   padding: 0%;
-  justify-content: center;
   align-items: center;
   position: absolute;
-  left: 20px;
-  top: 5%;
+  left: 50px;
+  top: 8%;
   z-index: 0;
 }
 .thumbnail  {
-  border : 3px solid rgb(65, 140, 11);
   width: 80px;
   height: 80px;
-  
+  margin-top: 4%;
  
 }
 .thumbnail img {
   width: 80px;
   height: 80px;
   z-index: 0;
+  
 }
   
 .thumbnail-selected { 
   width: 80px;
   height: 80px;
-  }
+  margin-top: 4%;
+}
+
 
 .thumbnail-selected img {
+  border-radius: 12px;  
   height: 80px;
   width: 80px;
   z-index: 0;
+ 
+/*   border: 2px solid rgb(54, 192, 118); */
   }
 .thumbnail-dots{
    display: none;
@@ -129,41 +139,43 @@
 
 @media screen and (max-width: 768px) {
 
-  .image-carousel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center ;
-  gap: 15px;
-  width: 98%;
-  margin: 0;
-  padding: 0;
+.image-carousel {
+  overscroll-behavior: none;
+display: flex;
+flex-direction: column;
+align-items: center;
+/* justify-content: center ; */
+width: 98%;
+margin: 0% 0% 0% 0%;
+padding: 0;
+height: auto;
 }
-  
+
 .title{
-width: 90%;
-height: 200px;
-padding: 50px;
+width: 100%;
+height: auto;
 text-align: center;
-position: inherit;
-top:auto;
+top: auto;
 right: auto;
+left: auto;
 background-color: transparent;
+position: static;
+width: auto;
+height: auto;
 }
 .main-image-container {
-width: 400px;
 height: 400px;
-padding: 0;
-border-radius: 8px;
-overflow: hidden;
-object-fit: cover;
-display: flex;
-justify-content: center ;
-align-items: center;
-gap: 10px; 
-position: relative ;
 top: auto;
 left: auto;
+margin: 0;
+padding: 0;
+position: static ;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: transform 0.3s ease;
+border-radius: 20px;
 }
 .buttonLeft {
 position: absolute;
@@ -191,13 +203,12 @@ align-items: center;
 }
 
 .main-image {
-width: 400px;
-height: 400px;
-padding: 0;
-margin: 0;
+width: 100%;
+max-height: 400px;
 transition: transform 0.3s ease;
 border-radius: 20px;
 z-index: 1;
+position: static;
 }
 
 .main-image:hover {
@@ -209,21 +220,16 @@ display: flex;
 flex-direction: row;
 gap: 10px;
 padding: 10px 0;
-/*  width: 100%; */
 align-items: center;
 justify-content: center;
-position: absolute;
-/* bottom: 0%; */
-z-index: 2;
+position: static;
+bottom: 24%;
+border:3px solid rgb(54, 192, 118);
 left: auto;
-  top: auto;
+top: auto;
+height: auto;
 }
-
 .thumbnail-selected { 
-/*   width: 80px;
-  height: 80px;
-  cursor: pointer;
-  overflow: hidden; */
   display: none;
 }
 .thumbnail-selected img {
@@ -231,8 +237,7 @@ left: auto;
   height: 80px;
   cursor: pointer;
   overflow: hidden;
-  display: none;
-  
+  display: none; 
 }
 
 .thumbnail-dots{
@@ -252,23 +257,14 @@ border-radius: 50%;
 background: #ffffff;
 }
 
-.thumbnail  {
-/*   border : 3px solid rgb(65, 140, 11);
-  width: 80px;
-  height: 80px;
-  border-radius: 4px;
-  cursor: pointer;
-  overflow: hidden;
-  flex-shrink: 0; */
+.thumbnail{
   display: none;  
-  
 }
 .thumbnail img {
   width: 80px;
   height: 80px;
   display: none;
 }
-
 .thumbnail:hover {
   border-color: #ccc;
 }
@@ -280,21 +276,27 @@ background: #ffffff;
 }
 .info{
   background-color: transparent;
-/*   text-align: center; */
   width: 90%;
-  padding: 50px;
+  padding: 0;
   right: auto;
   top: auto;
+  height: 200px; 
+  word-wrap: break-word;
+  font-size: 10px;
+  position: static;
+  height: auto;
 }
 .price{
-  color:none;
-  text-decoration: none;
-
-  right: auto;
-
-/*   align-items: center; */
+  left: auto;
+  background-color: transparent;
+  color: #70a67c;
+  
   top: auto;
-  gap: auto;
+  gap:auto;
+  right: auto;
+  position: static; 
+  width: auto;
+  height: auto; 
 }
-
+.link{}
 }

@@ -84,14 +84,20 @@ export const Details = () =>{
                 </h1>
             </div>
             <div className="price">
-                <Link to={"/"}>Go back Jo-Jo</Link>
+                <h3>${element[0].price}</h3>
                     <IconContext.Provider 
-                        value={{ color: "blue", size : "1em"}}>
-                    <button 
-                        onClick={(e)=>contact(e)}>
-                        <SiWhatsapp/>
-                    </button>
+                        value={{className: "react-icons"}}>
+                   
+                        <SiWhatsapp
+                        onClick={(e)=>contact(e)}
+                        />
+            
                     </IconContext.Provider>
+                <Link  className={"link"}to={"/"}>
+                <h3>
+                Go back
+                </h3>
+                </Link>
             </div>
         </div>
     )

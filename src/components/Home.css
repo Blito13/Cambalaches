@@ -2,6 +2,7 @@
     background-color: #373844;
    position: relative;
     width: 100%;
+/*    align-items: center; */
     height: 100vh;
     display: block;
     margin: 0%;
@@ -11,11 +12,15 @@
 
 @media screen and (max-width: 768px){
     .home-container{
+        scroll-behavior: initial;
     background-color: #373844;
    position: relative;
     width: 100%;
     display: block;
     margin: 0%;
     padding: 0%;
+    overscroll-behavior: none;
+    
+    
 }
 }
