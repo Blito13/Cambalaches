@@ -7,7 +7,7 @@
   margin: 0% 0% 0% 5%;
   padding: 0;
   position: relative;
-overscroll-behavior: none;
+  overscroll-behavior: none;
   /* border:3px solid rgb(45, 194, 12); */
   gap: 13px;
 
@@ -40,6 +40,7 @@ overscroll-behavior: none;
     height: 28%;
     text-align: center;
     overflow-y: scroll;
+
   }
   .title{
 /*     background-color: #fff; */
@@ -47,11 +48,11 @@ overscroll-behavior: none;
 /*     right: 5%; */
     left: 60%;
     top: 8%;
-    width: 300px;
+    width: 400px;
     height: 28%;
     padding: 0;
     text-align: center;
-    /* border:3px solid red; */
+   /*  border:3px solid red; */
     }
   .price{
     text-decoration: none;
@@ -66,6 +67,13 @@ overscroll-behavior: none;
     top:59%;
     gap: 10px;
     }
+    .price h3{
+      color: #70a67c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
+      padding: 0;
+    }
     .react-icons {
       background-color: transparent;
       color:#70a67c;
@@ -73,9 +81,11 @@ overscroll-behavior: none;
       margin: 0%;
       width: 100px;
       height: 80px;
+      cursor: pointer;
     }
     .link {
       color: #70a67c;
+      text-decoration: none;
     }
 
 .buttonLeft {
@@ -111,7 +121,6 @@ overscroll-behavior: none;
   width: 80px;
   height: 80px;
   z-index: 0;
-  
 }
   
 .thumbnail-selected { 
@@ -126,8 +135,6 @@ overscroll-behavior: none;
   height: 80px;
   width: 80px;
   z-index: 0;
- 
-/*   border: 2px solid rgb(54, 192, 118); */
   }
 .thumbnail-dots{
    display: none;
@@ -224,7 +231,6 @@ align-items: center;
 justify-content: center;
 position: static;
 bottom: 24%;
-border:3px solid rgb(54, 192, 118);
 left: auto;
 top: auto;
 height: auto;
@@ -290,7 +296,6 @@ background: #ffffff;
   left: auto;
   background-color: transparent;
   color: #70a67c;
-  
   top: auto;
   gap:auto;
   right: auto;
@@ -298,5 +303,5 @@ background: #ffffff;
   width: auto;
   height: auto; 
 }
-.link{}
+
 }

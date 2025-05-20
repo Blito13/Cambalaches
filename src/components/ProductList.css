@@ -23,4 +23,5 @@
     height: calc(var(--max) * 0.5);
     object-fit: cover;
   }
-  
+@media screen and (max-width: 768px) {
+}

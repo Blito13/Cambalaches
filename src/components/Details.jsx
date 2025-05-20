@@ -84,7 +84,7 @@ export const Details = () =>{
                 </h1>
             </div>
             <div className="price">
-                <h3>${element[0].price}</h3>
+                <h3>{element[0].price? `$ ${element[0].price}`: "Ofertar"}</h3>
                     <IconContext.Provider 
                         value={{className: "react-icons"}}>
                    
@@ -95,7 +95,7 @@ export const Details = () =>{
                     </IconContext.Provider>
                 <Link  className={"link"}to={"/"}>
                 <h3>
-                Go back
+                   Volver
                 </h3>
                 </Link>
             </div>
