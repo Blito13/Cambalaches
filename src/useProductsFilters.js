@@ -9,12 +9,12 @@ const selectFilteredProducts = createSelector(
   (products, filters) => {
     console.log(products, filters);
     return products.filter(product => {
+
       const matchesCategory = !filters.category || product.category === filters.category;
       const matchesPrice = product.price >= filters.priceRange.min && 
                          product.price <= filters.priceRange.max;
-      const matchesTitle = !filters.title || 
-        product.title.toLowerCase().includes(filters.title.toLowerCase());
-      
+      const matchesTitle = !filters.title || product.title.toLowerCase().includes(filters.title.toLowerCase());
+      console.log(matchesTitle ,matchesCategory, matchesPrice);
       return matchesCategory && matchesPrice && matchesTitle;
     });
   }

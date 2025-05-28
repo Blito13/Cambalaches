@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   category: '',
-  priceRange: { min: 0, max: 1000 },
+  priceRange: { min: 0, max: 10000000 },
   title: '',
   // otros filtros que necesites
 };
@@ -15,7 +15,21 @@ const filterSlice = createSlice({
       state.category = action.payload;
     },
     setPriceRange: (state, action) => {
-      state.priceRange = action.payload;
+      console.log('setPriceRange', action.payload);
+      let priceRange = action.payload;
+      let objto = { min: 0, max: 10000000 };
+      if (typeof priceRange === 'object') {
+        if (priceRange.min !== undefined) {
+          objto.min = priceRange.min;
+        }
+        if (priceRange.max !== undefined) {
+          objto.max = priceRange.max;
+        }
+      } else if (typeof priceRange === 'number') {
+        objto.min = 0;
+        objto.max = priceRange;
+      }
+      state.priceRange = objto;
     },
     setTitleFilter: (state, action) => {
       state.title = action.payload;

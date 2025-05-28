@@ -7,18 +7,16 @@ import { FilterForm } from './FilterForm';
 export const ProductList = () => {
   const data = useSelector((state) => state.products);
  const { 
-    filteredProducts, 
-    currentFilters,
-    resetAllFilters 
+    filteredProducts
   } = useProductFilters();
   console.log(filteredProducts)
   return (
     <>
       <FilterForm></FilterForm>
-      { /* filteredProducts */data.products.length > 1 ? (
+      { filteredProducts.length >= 1 ? (
         <div className="products-container"> {/* Contenedor único para los productos */}
           <ul className="products"> {/* Lista de productos */}
-            {data.products.map((product) => (
+            {filteredProducts.map((product) => (
               <Products
                 key={product.id} // Mueve la key aquí
                 id={product.id}

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setCategory, setPriceRange, setTitleFilter, resetFilters } from '../redux/filterSlice'; // Asegúrate de que la ruta sea correcta
 
-const categories = ['Electrónica', 'Ropa', 'Hogar', 'Deportes', 'Otros'];
+const categories = ['nuevos', 'usados', 'reacondicionados', 'vintage', 'coleccionables']; // Lista de categorías
 
 export const FilterForm = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ export const FilterForm = () => {
     dispatch(setTitleFilter(e.target.value));
   };
 
-  const handleReset = () => {
+  const handleReset = (e) => {
     dispatch(resetFilters());
   };
 
