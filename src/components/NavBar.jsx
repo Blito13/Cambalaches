@@ -13,7 +13,7 @@ const handleClick = () => {
     return(
         <div className="navbar">
             <div className="nav-container">
-                <h2 className="logo">Cambalache®
+                <h2 className="logo">Cambalaches
                 <button className="btn" onClick={handleClick}>
                 {active === false ? "☰" : "✖"}
                 </button>

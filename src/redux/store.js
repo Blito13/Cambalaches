@@ -3,22 +3,25 @@ import { combineReducers } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // Usa localStorage
 import productReducer from './productSlice';
+import filterReducer from './filterSlice'; // Asegúrate de importar tu reducer de filtros 
 
 
 // Configuración de Redux Persist
 const persistConfig = {
   key: 'root', // Clave para el almacenamiento
   storage, // Usa localStorage
-  whitelist: ['products'], // Especifica qué reducers quieres persistir
+  whitelist: ['products', 'filters'], // Especifica qué reducers quieres persistir
 };
 
 // Combina tus reducers
 const rootReducer = combineReducers({
   products: productReducer,
+  filters : filterReducer, // Asegúrate de que el nombre coincida con el de tu slice de filtros
+  // Puedes agregar más reducers aquí si es necesario
 });
 
 // Crea un reducer persistido
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);    
 
 // Configura el store con el reducer persistido
 export const store = configureStore({

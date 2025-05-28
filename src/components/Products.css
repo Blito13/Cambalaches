@@ -9,7 +9,7 @@
   display: block;
   position: relative;
   width: 100%;
-  min-height: 100px; /* Altura mínima de respaldo */
+  min-height: 60px; /* Altura mínima de respaldo */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);

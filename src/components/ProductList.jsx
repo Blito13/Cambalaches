@@ -2,12 +2,20 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Products } from './Products';
 import './ProductList.css';
+import { useProductFilters } from '../useProductsFilters'; 
+import { FilterForm } from './FilterForm';
 export const ProductList = () => {
   const data = useSelector((state) => state.products);
-  const randomHeight = Math.floor(Math.random() * 150) + 100;
+ const { 
+    filteredProducts, 
+    currentFilters,
+    resetAllFilters 
+  } = useProductFilters();
+  console.log(filteredProducts)
   return (
     <>
-      {data.products.length > 1 ? (
+      <FilterForm></FilterForm>
+      { /* filteredProducts */data.products.length > 1 ? (
         <div className="products-container"> {/* Contenedor único para los productos */}
           <ul className="products"> {/* Lista de productos */}
             {data.products.map((product) => (

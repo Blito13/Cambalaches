@@ -37,6 +37,8 @@ export const Details = () =>{
             </div>
             <div className="main-image-container">
                 <button
+                    aria-label="left"
+                    type="button"
                     className="buttonLeft"
                     onClick={()=>setSelected(selected===0 ?selected : selected-1) }
                 >
@@ -50,6 +52,8 @@ export const Details = () =>{
                     className="main-image"
                 />
                 <button
+                    aria-label="right"
+                    type="button"
                     className="buttonRight"
                     onClick={()=>setSelected(selected===element[0].thumbnail.length-1?selected:selected+1) }
                 >
