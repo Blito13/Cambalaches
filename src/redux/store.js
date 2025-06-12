@@ -16,8 +16,8 @@ const persistConfig = {
 // Combina tus reducers
 const rootReducer = combineReducers({
   products: productReducer,
-  filters : filterReducer, // Asegúrate de que el nombre coincida con el de tu slice de filtros
-  // Puedes agregar más reducers aquí si es necesario
+  filters : filterReducer, //quitar persistencia en filtros si no es necesario
+ 
 });
 
 // Crea un reducer persistido

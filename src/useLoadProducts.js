@@ -6,7 +6,6 @@ import { db } from './firebase/config';
 import { setProducts } from './redux/productSlice';
 
 export const useLoadProducts = (nameData) => {
-  console.log("pasando", nameData)
   const dispatch = useDispatch();
   const products = useSelector(state => state.products);
   console.log( Object.keys(products).length)
