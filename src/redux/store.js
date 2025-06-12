@@ -4,12 +4,12 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // Usa localStorage
 import productReducer from './productSlice';
 import filterReducer from './filterSlice'; // Asegúrate de importar tu reducer de filtros 
-
+import storageSession from 'redux-persist/lib/storage/session'
 
 // Configuración de Redux Persist
 const persistConfig = {
   key: 'root', // Clave para el almacenamiento
-  storage :sessionStorage , // Usa localStorage
+  storage : storageSession, // Usa localStorage
   whitelist: ['products'], // Especifica qué reducers quieres persistir
 };
 
