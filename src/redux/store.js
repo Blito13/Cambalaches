@@ -9,8 +9,8 @@ import filterReducer from './filterSlice'; // Asegúrate de importar tu reducer 
 // Configuración de Redux Persist
 const persistConfig = {
   key: 'root', // Clave para el almacenamiento
-  storage, // Usa localStorage
-  whitelist: ['products', 'filters'], // Especifica qué reducers quieres persistir
+  storage :sessionStorage , // Usa localStorage
+  whitelist: ['products'], // Especifica qué reducers quieres persistir
 };
 
 // Combina tus reducers
