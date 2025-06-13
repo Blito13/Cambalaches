@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Products.css';
 
 export const Products = ({ id, product, imagen }) => {
+  //guardar en un estado el height para evitar recalculos innecesarios
   const randomHeight = Math.floor(Math.random() * 150) + 100;
   return (
    <div className='product-item' style={{height:`${randomHeight}px`}}>

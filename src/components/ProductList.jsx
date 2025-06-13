@@ -12,7 +12,7 @@ export const ProductList = () => {
   console.log(filteredProducts)
   return (
     <>
-      <FilterForm></FilterForm>
+      
       { filteredProducts.length >= 1 ? (
         <div className="products-container"> {/* Contenedor único para los productos */}
           <ul className="products"> {/* Lista de productos */}

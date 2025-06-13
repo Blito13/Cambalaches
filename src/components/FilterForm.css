@@ -1,10 +1,20 @@
 .filter-form {
+  background: #30303C;
   padding: 20px;
-  background: #f5f5f5;
-  border-radius: 8px;
   margin-bottom: 20px;
+  margin-top: 30px;
+  height: 300px;
 }
+.filter-form label {
+  color: #fff;
+  font-size: 16px;
+}
+.filter-form h3{
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 15px;
 
+}
 .form-group {
   margin-bottom: 15px;
 }
@@ -34,7 +44,7 @@
 }
 
 .reset-btn {
-  background: #ff4444;
+  background:#70a67c;
   color: white;
   border: none;
   padding: 8px 15px;
@@ -44,5 +54,34 @@
 }
 
 .reset-btn:hover {
-  background: #cc0000;
+  background:#70a67c;
+}
+
+
+@media screen and (max-width: 600px) {
+  .filter-form {
+    padding: 15px;
+    width: 100%;
+    border: 2px solid red;
+    height: 350px;
+    display: flex;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 6px;
+  }
+
+  .price-range {
+    flex-direction: column;
+  }
+
+  .price-range input {
+    width: 100%;
+  }
+  
 }

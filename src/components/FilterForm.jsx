@@ -1,10 +1,12 @@
 import React from 'react';
+import './FilterForm.css'; 
 import { useDispatch } from 'react-redux';
 import { setCategory, setPriceRange, setTitleFilter, resetFilters } from '../redux/filterSlice'; // Asegúrate de que la ruta sea correcta
 
 const categories = ['nuevos', 'usados', 'reacondicionados', 'vintage', 'coleccionables']; // Lista de categorías
 
 export const FilterForm = () => {
+  //desoues de cada busqueda limpiar los imputs y el state de los filtros
   const dispatch = useDispatch();
   
   // Manejadores de eventos

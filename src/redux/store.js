@@ -17,7 +17,6 @@ const persistConfig = {
 const rootReducer = combineReducers({
   products: productReducer,
   filters : filterReducer, //quitar persistencia en filtros si no es necesario
- 
 });
 
 // Crea un reducer persistido
