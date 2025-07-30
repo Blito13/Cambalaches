@@ -1,16 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  overscroll-behavior: none;
+body {
+  font-family: 'Inter', sans-serif;
 }
-html {
-  overflow-y: scroll;
-}
-body{
-  font-family: "roboto", sans-serif;
-  background-color: #40414C;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-  overscroll-behavior: none;
-} 

@@ -1,0 +1,3 @@
+. Globalizar con redux persistor
+. Corregir carrusel de productos
+. 
