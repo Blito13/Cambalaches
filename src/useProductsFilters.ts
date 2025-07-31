@@ -20,7 +20,7 @@ interface UseProductFiltersReturn {
 // Selector memoizado con tipos
 const selectFilteredProducts = createSelector(
   [
-    (state) => state.product as Product[],
+    (state) => state.product.products as Product[],
     (state) => state.filters as Filters
   ],
   
@@ -29,7 +29,7 @@ const selectFilteredProducts = createSelector(
     return products.filter(product => {
       const matchesCategory = !filters.category || product.category === filters.category;
       const matchesPrice = (!filters.priceRange.min || product.price >= filters.priceRange.min) && 
-                         (!filters.priceRange.max || product.price <= filters.priceRange.max);
+                           (!filters.priceRange.max || product.price <= filters.priceRange.max);
       const matchesTitle = !filters.title || 
                          product.title.toLowerCase().includes(filters.title.toLowerCase());
       

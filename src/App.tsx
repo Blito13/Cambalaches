@@ -11,6 +11,7 @@ import { useAppSelector } from './redux/store';
 import { useAppDispatch } from './redux/store';
 import { setProducts } from './redux/productSlice';
 import { productsMock } from './data/products';
+import { useLoadProducts }  from './useLoadProducts';
 /* import { db } from './firebase';
 import { collection, getDocs } from "firebase/firestore"; 
  */
@@ -22,9 +23,11 @@ const App = () => {
   const { products , loading, error } = useAppSelector((state) => state.product);
   const {category, priceRange, title} = useAppSelector((state) => state.filters);
   /* const products = useAppSlelector(state => state.product.products); */
-  const dispatch = useAppDispatch();
-  const filteredProducts = products.filter(product =>
-    product.title.toLowerCase().includes(searchTerm.toLowerCase()));
+/*   const dispatch = useAppDispatch(); */
+   const { fetchedPoducts } = useLoadProducts("productos");
+   console.log(fetchedPoducts, "fetchedPoducts");
+ /*  const filteredProducts = products.filter(product =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())); */
     useEffect(() => {
     /*   products.length === 0 && *//*  dispatch(fetchProducts()); */
     console.log(products , "lalala" , error, loading);

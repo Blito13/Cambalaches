@@ -1,3 +1,4 @@
+. Conectar filtros ♪♫
 . Globalizar con redux persistor
 . Corregir carrusel de productos
-. 
+. Estilizar componente filtro

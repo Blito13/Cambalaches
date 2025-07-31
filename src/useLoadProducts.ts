@@ -44,6 +44,7 @@ export const useLoadProducts = (nameData: string) => {
       });
       
       dispatch(setProducts(productsData));
+      console.log("heheefilehlifehlifhelifheliroductsData");
     } catch (error) {
       console.error("Error loading products:", error);
     }
@@ -52,12 +53,13 @@ export const useLoadProducts = (nameData: string) => {
   // Carga inicial automática
   useEffect(() => {
     if (products && products.length < 1) {
+      console.log("useeffect load products");
       loadProducts();
     }
   }, []);
 
   return {
-    products: products,
+    fetchedPoducts: products,
     refreshProducts: loadProducts
   };
 };

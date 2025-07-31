@@ -12,6 +12,7 @@ import type { Product } from '../types/Product'; // Importa el tipo Product
 
 export const ProductList: React.FC = () => {
   // Tipamos el estado con RootState
+  const { filteredProducts } = useProductFilters()
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   // Tipamos el hook useProductFilters (asumiendo que devuelve filteredProducts)
  /*  const { filteredProducts } = useProductFilters();
@@ -22,7 +23,7 @@ console.log(filteredProducts, "filteredProducts"); */
       <div className="mb-8">
         <FilterForm />
       </div>
-    {/*  {filteredProducts.length === 0 ? (
+    {filteredProducts.length === 0 ? (
               <p className="text-center text-gray-500">No se encontraron productos</p>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -34,7 +35,7 @@ console.log(filteredProducts, "filteredProducts"); */
                   />
                 ))}
               </div>
-            )} */}
+            )}
             
             {selectedProduct && (
               <ProductDetails 
