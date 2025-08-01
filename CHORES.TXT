@@ -1,6 +1,6 @@
 . Conectar filtros ♪♫
 . Corregir lentitud de fotos en carrusel ♪♫
-. Corregir carrusel de productos
+. Corregir carrusel de productos ♪♫
 . Estilizar componente filtro 
 . Agregar dark light
 . Loading gif/svg
