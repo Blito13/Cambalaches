@@ -11,24 +11,6 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onClose
 
   if (!product) return null;
 
- const nextImage = (e: React.MouseEvent<HTMLButtonElement>) => {
-  e.preventDefault(); // Previene el comportamiento por defecto
-  setCurrentImageIndex((prevIndex) => 
-    prevIndex === product.thumbnail.length - 1 ? 0 : prevIndex + 1
-  );
-};
-
-const prevImage = (e: React.MouseEvent<HTMLButtonElement>) => {
-  e.preventDefault(); // Previene el comportamiento por defecto
-  setCurrentImageIndex((prevIndex) => 
-    prevIndex === 0 ? product.thumbnail.length - 1 : prevIndex - 1
-  );
-};
-
-const goToImage = (index: number, e: React.MouseEvent<HTMLButtonElement>) => {
-  e.preventDefault(); // Previene el comportamiento por defecto
-  setCurrentImageIndex(index);
-};
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -45,19 +27,18 @@ const goToImage = (index: number, e: React.MouseEvent<HTMLButtonElement>) => {
           </div>
           
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="relative">
-              {/* Imagen principal */}
+            <div className="relative w-full aspect-video md:aspect-[3/4] lg:aspect-square transition-all duration-300">
+              
               <img 
+                key={product.id}
                 src={product.thumbnail[currentImageIndex]} 
                 alt={product.title} 
-                className="w-full rounded-lg"
+                className="w-full h-full object-contain bg-gray-50 rounded-lg transition-transform transform hover:scale-105"
               />
-              
-              {/* Flechas de navegación */}
               {product.thumbnail.length > 1 && (
                 <>
                   <button
-                    onClick={prevImage}
+                    onClick={()=>setCurrentImageIndex(currentImageIndex===0 ?currentImageIndex : currentImageIndex-1)}
                     className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md hover:bg-white"
                     aria-label="Previous image"
                   >
@@ -66,7 +47,7 @@ const goToImage = (index: number, e: React.MouseEvent<HTMLButtonElement>) => {
                     </svg>
                   </button>
                   <button
-                    onClick={nextImage}
+                    onClick={()=>setCurrentImageIndex(currentImageIndex===product.thumbnail.length-1?currentImageIndex:currentImageIndex+1) }
                     className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md hover:bg-white"
                     aria-label="Next image"
                   >
@@ -76,14 +57,12 @@ const goToImage = (index: number, e: React.MouseEvent<HTMLButtonElement>) => {
                   </button>
                 </>
               )}
-              
-              {/* Indicadores de posición */}
               {product.thumbnail.length > 1 && (
                 <div className="flex justify-center mt-4 space-x-2">
                   {product.thumbnail.map((_, index) => (
                     <button
                       key={index}
-                      onClick={(e) => goToImage(index , e)}
+                      onClick={()=>setCurrentImageIndex(index)}
                       className={`w-3 h-3 rounded-full ${currentImageIndex === index ? 'bg-blue-600' : 'bg-gray-300'}`}
                       aria-label={`Go to image ${index + 1}`}
                     />
@@ -91,7 +70,6 @@ const goToImage = (index: number, e: React.MouseEvent<HTMLButtonElement>) => {
                 </div>
               )}
             </div>
-            
             <div>
               <p className="text-xl font-semibold text-blue-600">${product.price}</p>
               <p className="text-gray-600 mt-2">{product.description}</p>

@@ -8,7 +8,8 @@ interface ProductCardProps {
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
-      <img 
+      <img
+        key = {product.id} 
         src={product.thumbnail[0]} 
         alt={product.title} 
         className="w-full h-48 object-cover"
