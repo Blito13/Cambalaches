@@ -1,8 +1,8 @@
 . Conectar filtros ♪♫
-. Corregir lentitud de fotos en carrusel ♪♫
+. Corregir lentitud de fotos en carrusel y calidad de imagenes♫♪
 . Corregir carrusel de productos ♪♫
-. Estilizar componente filtro 
+. Estilizar componente filtro ♫
 . Agregar dark light
 . Loading gif/svg
 . Globalizar con redux persistor
-. Contact Owner component
+. Contact Owner component/form

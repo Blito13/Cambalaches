@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Product } from '../types/Product';
-
+import { WhatsAppButton } from './WhatsAppButton';
 interface ProductDetailsProps {
   product: Product | null;
   onClose: () => void;
@@ -33,7 +33,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onClose
                 key={product.id}
                 src={product.thumbnail[currentImageIndex]} 
                 alt={product.title} 
-                className="w-full h-full object-contain bg-gray-50 rounded-lg transition-transform transform hover:scale-105"
+                className="w-full h-full object-cover bg-gray-50 rounded-lg transition-transform transform hover:scale-105 "
               />
               {product.thumbnail.length > 1 && (
                 <>
@@ -78,13 +78,12 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onClose
                 <h3 className="font-semibold text-gray-800">Detalles:</h3>
                 <ul className="mt-2 space-y-2">
                   <li><span className="font-medium">Marca:</span> {product.brand}</li>
-                  <li><span className="font-medium">Peso:</span> {product.description}</li>
                   <li><span className="font-medium">Dimensiones:</span> {product.stock}</li>
                   <li><span className="font-medium">Color:</span> {product.category}</li>
-                  <li><span className="font-medium">Material:</span> {product.id}</li>
                 </ul>
               </div>
             </div>
+                <WhatsAppButton/> 
           </div>
         </div>
       </div>

@@ -79,7 +79,7 @@ export const FilterForm: React.FC<FilterFormProps> = () => {
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Rango de precio:
         </label>
-        <div className="flex items-center space-x-2">
+        <div className="flex-col items-center space-x-2">
           <input
             type="number"
             name="min"

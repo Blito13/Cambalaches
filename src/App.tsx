@@ -61,7 +61,7 @@ const App = () => {
          */}
        <ProductList></ProductList>
         
-        <WhatsAppButton />
+        
       </div>
     </div>
   );
